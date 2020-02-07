@@ -1,0 +1,49 @@
+enum From {
+  SERVER
+  CLIENT
+}
+
+enum Request {
+  CHECK_HASH
+  ADMIN_HELP
+  PROCESS_SET_PERMISSION
+}
+
+enum Response {
+  PROCESS_UNKNOWN
+  PROCESS_ALLOW
+  PROCESS_DENY
+  ADMIN_HELP_START
+	ADMIN_HELP_PROCESS
+	ADMIN_HELP_END
+	ERROR
+}
+
+type Activity {
+  id: ID
+  proces_id: Int
+  guid: String
+  hostname: String
+  filename: String
+  hash: String
+  address: String
+  port: String
+  from: From
+  request: Request
+  response: Response
+  createdAt: String
+  updatedAt: String
+}
+
+type Query {
+  activities: [Activity]
+  # activity(id: Int): Activity
+}
+
+# type Mutation {
+#   activityCreate(name: String): Activity
+# }
+
+type Subscription {
+  activityCreated: Activity
+}

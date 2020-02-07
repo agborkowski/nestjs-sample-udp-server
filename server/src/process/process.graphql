@@ -1,0 +1,50 @@
+scalar JSON
+
+enum Permissions {
+  NEW
+  ALLOW
+  DENY
+  UNKNOWN
+}
+
+type Process {
+  id: ID
+  hash: String
+  originalFilename: String
+  extension: String
+  permission: Permissions
+  adminHelp: String
+  createdAt: String
+  updatedAt: String
+}
+
+input ProcessCreateInput {
+  hash: String
+  originalFilename: String
+  permission: Permissions
+}
+input ProcessUpdateInput {
+  id: ID
+  adminHelp: String
+  permission: String
+}
+
+input ProcessRemoveInput {
+  id: ID
+  hash: String
+}
+
+type Query {
+  processes: [Process]
+  process(id: Int): Process
+}
+
+type Mutation {
+  processCreate(input: ProcessCreateInput): Process
+  processUpdate(input: ProcessUpdateInput): Process
+  processRemove(input: ProcessRemoveInput): Boolean!
+}
+
+type Subscription {
+  processCreated: Process
+}
