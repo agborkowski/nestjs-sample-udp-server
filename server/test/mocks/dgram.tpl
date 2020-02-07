@@ -1,0 +1,4 @@
+guid
+hostname
+filename
+hash
