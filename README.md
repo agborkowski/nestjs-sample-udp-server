@@ -3,7 +3,7 @@ Its a example of implementation UDP protocol (with node dgram) to receive packet
 
 - Don't use in production
 - It's just part of how to integrate
--- GraphQL API
--- UDP server and how to write integration tests
--- TypeORM
--- BDD
+  - GraphQL API
+  - UDP server and how to write integration tests
+  - TypeORM
+  - BDD
