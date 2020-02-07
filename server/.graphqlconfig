@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "cleanexe": {
+      "schemaPath": "schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "default": {
+            "url": "http://localhost:3000/graphql",
+            "subscription": "ws://localhost:3000/graphql"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest", "node"]
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "enableTsDiagnostics": true
+      }
+    }
+  },
+  "include": ["**/*.spec.ts", "**/*.d.ts", "**/*.e2e-spec.ts"]
+}
